@@ -1,3 +1,65 @@
-<div>
+<!--<div>
+  <h1>This is App Component</h1>
+ 
+ <button id="btn"  [disabled]="" [style]="style">Save Me</button>
+ <input type="text" id="inputBox" >
+ <img [attr.src]="src" alt=""> -->
+<!--<h2 class="h2-heading">Hi my name is <span class="name">{{employee.name}}</span> and salary is <span class="salary">{{employee.salary}}</span></h2>
+
+
+<div *ngIf="show">
+  <ul>
+    <li>One</li>
+    <li>TWo</li>
+    <li>Three</li>
+    <li>Four</li>
+  </ul>
+</div>
+</div>
+-->
+<div [ngSwitch]="myValue">
+<div *ngSwitchCase="1">
+  <p>This is first</p>
+</div>
+
+<div *ngSwitchCase="2">
+  <p>This is Second</p>
+</div>
+
+<div *ngSwitchCase="3">
+  <p>This is Third</p>
+</div>
+
+<div *ngSwitchDefault>
+  <p>This is default</p>
+</div>
 
 </div>
+
+
+
+<table border="1">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Salary</th>
+      <th>Index</th>
+      <th>Is First</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let employee of employeesList;
+     index as i;
+     first as f;
+     trackBy : getEmployeeName
+    ">
+      <td>{{employee.name}}</td>
+      <td>{{employee.salary}}</td>
+      <td>{{i}}</td>
+      <td>{{f}}</td>
+    </tr>
+  </tbody>
+</table>
+
+<button id="btn" (click)="refresh()">Refresh</button>
+
